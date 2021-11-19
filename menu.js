@@ -30,7 +30,14 @@
     'kids'
 */
 
-//CODE HERE
+const pizza = {
+    name: 'mypizza',
+    price: 10,
+    category: 'entree',
+    popularity: 100,
+    rating: 99,
+    tags: ['gluten-free', 'low carb']
+}
 
 
 
@@ -42,7 +49,7 @@
     Use dot notation to access the value.
 */
 
-//CODE HERE
+console.log(pizza.popularity)
 
 
 /*
@@ -52,7 +59,7 @@
     get the value.
 */
 
-//CODE HERE
+console.log(pizza.tags[1])
 
 
 /*
@@ -62,7 +69,8 @@
     Print the value of your new price variable.
 */
 
-//CODE HERE
+const {price: pizzaPrice} = pizza
+console.log(pizzaPrice)
 
 
 /*
@@ -72,7 +80,8 @@
     Print the value of your category variable. 
 */
 
-//CODE HERE
+const {category: pizzaCategory} = pizza
+console.log(pizzaCategory)
 
 
 //////////////////PROBLEM 3////////////////////
@@ -87,7 +96,47 @@
     data in some functions that you'll write.
 */
 
-//CODE HERE
+const foodArr = [ 
+ {
+    name: 'apple',
+    price: 2,
+    category: 'fruit',
+    popularity: 50,
+    rating: 100,
+    tags: ['healthy', 'organic']
+},
+{
+    name: 'carrot',
+    price: 4,
+    category: 'vegetable',
+    popularity: 20,
+    rating: 10,
+    tags: ['no pesticides', 'orange']
+},
+{
+    name: 'cracker',
+    price: 6,
+    category: 'snack',
+    popularity: 80,
+    rating: 90,
+    tags: ['salty', 'whole wheat']
+ },
+ {
+    name: 'cheese',
+    price: 8,
+    category: 'appetizer',
+    popularity: 100,
+    rating: 98,
+    tags: ['sharp-cheddar', 'bite size']
+ },
+ {name: 'icecream',
+    price: 10,
+    category: 'dessert',
+    popularity: 95,
+    rating: 100,
+    tags: ['dairy-free', '200 calories']
+ }
+]
 
 
 
@@ -103,11 +152,20 @@
     your food objects has.
 */
 
-//CODE HERE
-
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
 
 
+// const filteredFood = foodArr.filter(element => {
+//    for(let i = 0; i < foodArr.length; i++){
+//        if(element === foodArr[i].tags){
+//            return element;
+//        }
+//        else{
+//            console.log("Tag does not exist")
+//        }
+//    }
+// })
+
+// filteredFood('salty')
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -141,16 +199,28 @@
         if it is, return objects whose value for the given
         property is greater than the `number` passed in
 
-        If the type isn't `below`, return objects whose
+        If the type is `below`, return objects whose
         value for the given property is less than the 
         `number` passed in
     
     Return the filtered array from the entire function
 */
 
-//CODE HERE
+const filterByProperty = (property,number,type) =>  {
+    let arrHold = foodArr.filter(property,number,type)
 
+    property = +property
+    number = +number
 
+    if(arrHold > 50){
+        console.log('above: ' + arrHold)
+
+    }
+    else if (arrHold <= 50){
+        console.log('below: '+ arrHold)
+    }
+
+}
 /*
     Invoke the `filterByProperty` function passing
     in a value for each paramter.
@@ -158,4 +228,5 @@
     You'll have to console.log to see the filtered array
 */
 
-//CODE HERE
+// filterByProperty('2', 50, 'above')
+// console.log(filterByProperty('2',50, 'above'))
