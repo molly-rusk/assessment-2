@@ -154,18 +154,7 @@ const foodArr = [
 
 
 
-// const filteredFood = foodArr.filter(element => {
-//    for(let i = 0; i < foodArr.length; i++){
-//        if(element === foodArr[i].tags){
-//            return element;
-//        }
-//        else{
-//            console.log("Tag does not exist")
-//        }
-//    }
-// })
-
-// filteredFood('salty')
+const filteredFood = foodArr.filter(element => element.tags.includes('salty'))
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -207,20 +196,18 @@ const foodArr = [
 */
 
 const filterByProperty = (property,number,type) =>  {
-    let arrHold = foodArr.filter(property,number,type)
+    const arrayFiltered = foodArr.filter((element) => {
+        if(type === 'above'){
+            return element[property] > number
+        }
+        else if(type === 'below'){
+            return element[property] < number
+        }
+    })
 
-    property = +property
-    number = +number
-
-    if(arrHold > 50){
-        console.log('above: ' + arrHold)
-
-    }
-    else if (arrHold <= 50){
-        console.log('below: '+ arrHold)
-    }
-
+    return arrayFiltered
 }
+
 /*
     Invoke the `filterByProperty` function passing
     in a value for each paramter.
@@ -228,5 +215,4 @@ const filterByProperty = (property,number,type) =>  {
     You'll have to console.log to see the filtered array
 */
 
-// filterByProperty('2', 50, 'above')
-// console.log(filterByProperty('2',50, 'above'))
+console.log(filterByProperty('price',3,'below'))
