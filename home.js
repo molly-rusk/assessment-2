@@ -25,7 +25,6 @@ const greetUser = username => console.log(`Welcome back, ${username}`)
 
 
 
-
 //////////////////PROBLEM 2////////////////////
 /* 
     Below is an array of zip codes that are in
@@ -59,7 +58,6 @@ const canWeDeliver = zipCode => {
 
 
 
-
 /* 
     Problem 2 Continued
 
@@ -78,15 +76,14 @@ const canWeDeliver = zipCode => {
 */
 
 const canWeDeliverTwo = zipCode2 => {
+    const canDeliver = false
     for(let i = 0; i < deliveryAreaZipCodes.length; i++){
         if(deliveryAreaZipCodes[i] === zipCode2){
-            console.log("You're in our delivery zone!")
-           break;
-        }
-        else{
-            console.log("Sorry, we can't deliver to that address")
+            console.log("You're in our delivery zone!")    
         }
     }
+        return console.log("Sorry, we can't deliver to that address")
+    
 }
 
 
@@ -123,7 +120,7 @@ const deals = [
     to replace the 15 with a 10.
 */
 
-let newDeals = deals[0].title.replace('15', '10')
+deals[0].title = deals[0].title.replace('15', '10')
 
 //console.log(deals[0].title.replace('15', '10'))
 
@@ -142,5 +139,4 @@ let newDeals = deals[0].title.replace('15', '10')
     to be displaying wrong on the live site.
 */
 
-let extendedDeal = deals[1].desc.replace('March', 'April')
-extendedDeal.trim()
+deals[1].desc = deals[1].desc.replace('March', 'April')
