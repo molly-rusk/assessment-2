@@ -42,9 +42,10 @@ class Ticket {
      }
 }
 
-// let newTicket = new Ticket(1,10,20)
+ let newTicket = new Ticket(1,10,20)
 
-// updateStatus('not queued')
+newTicket.updateStatus('not queued')
+
 
 /*
     Create a new instance of your class.
@@ -66,6 +67,6 @@ const firstTicket = new Ticket('pizza', 1205, 100)
     'cooking'
 */
 
-//CODE HERE
 
-//updateStatus('cooking')
+
+firstTicket.updateStatus('cooking')
