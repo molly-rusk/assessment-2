@@ -35,7 +35,7 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((acc,curr) => cart[0].price + cart[1].price + cart[2].price)
 
 
 //////////////////PROBLEM 2////////////////////
@@ -53,8 +53,10 @@ const cart = [
     decimals, for example: .06 for a 6% tax.
 */
 
-//CODE HERE
-
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    cartTotal = ((cartTotal + (cartTotal * tax)) - couponValue)
+    return cartTotal;
+}
 
 
 //////////////////PROBLEM 3////////////////////
@@ -78,8 +80,12 @@ const cart = [
 */
 
 /*
-    TEXT ANSWER HERE
-
+  Customer object: 
+  - customer name: (type string is used as the customer's name will be a string) used to identify which customer
+  -customer age: (type number) another customer identifier
+  -customer height (in inches): (type number) another customer identifier
+  -customer on good standing: (type boolean) checks to see if the customer is bad or good
+ 
 */
 
 /*
@@ -88,3 +94,11 @@ const cart = [
 */
 
 //CODE HERE
+
+const newCustomer = 
+{
+    custName: 'Bob',
+    custAge: 50,
+    custheight: 72,
+    custStanding: true
+}
