@@ -29,9 +29,22 @@
     stored on the object.
 */
 
-//CODE HERE
+class Ticket {
+    constructor(items, orderTime, customerId){
+        this.items = items
+        this.orderTime = orderTime
+        this.customerId = customerId
+        let status = 'queued'
+    }
+     updateStatus(newStatus) {
+         this.status = newStatus 
+         console.log(`The order for customer ${this.customerId} is now ${this.status}`)
+     }
+}
 
+let newTicket = new Ticket(1,10,20)
 
+cupdateStatus('not queued')
 
 /*
     Create a new instance of your class.
