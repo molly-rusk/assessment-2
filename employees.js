@@ -65,9 +65,7 @@ empOne.getSchedule()
     dot or bracket notation.
 */
 
-// const empTwo = (...empOne)
-// empTwo.(this.name) = 'Nick'
-
+const empTwo = {...empOne, name: 'Nick'}
 
 
 
